@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
   // data["GET"] = req.query;
   // res.send(data);
    var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
-res.send({"status":"OK","API":"WORKING @ V1","API_V1":"/API/V1","url":fullUrl,"CORS":"allowed","GET":req.query,"request":req});
+res.send({"status":"OK","API":"WORKING @ V1","API_V1":"/API/V1","url":fullUrl,"CORS":"allowed","GET":req.query});
   
 });
 
