@@ -19,7 +19,10 @@ app.use(bodyParser.urlencoded({ limit: '1mb', extended: true }));
 app.get("/", (req, res) => {
   let data = {};
   data["GET"] = req.query;
-  res.send(data);
+  // res.send(data);
+   var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+res.send({"status":"OK","API":"WORKING @ V1","API_V1":"/API/V1","url":fullUrl,"CORS":"allowed"});
+  
 });
 
 // POST route
