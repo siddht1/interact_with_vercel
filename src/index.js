@@ -23,7 +23,8 @@ app.use(bodyParser.urlencoded({ limit: '1mb', extended: true }));
 app.get("/", (req, res) => {
   let data = {};
   data["GET"] = req.query;
-  res.send(data);
+  // res.send(data);
+  res.send(process.env);
 });
 
 // POST route
