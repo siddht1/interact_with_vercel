@@ -26,6 +26,10 @@ if(data['GET']['view']=='chatbot')
 {
     res.status(301).redirect("https://kivtechs.cloud/chao")
 }
+  else 
+{
+  console.log(data);
+}
   
 });
 
