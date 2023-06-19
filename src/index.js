@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-import { createClient } from '@vercel/edge-config';
+const { createClient } = require('@vercel/edge-config');
 
 const vercel_token=process.env.interact_with_vercel_token;
 
