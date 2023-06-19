@@ -5,6 +5,10 @@ import cors from "cors";
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+import { kv } from "@vercel/kv";
+await kv.set("user_1_session", "session_token_value");
+const session = await kv.get("user_1_session");
+
 
 // Enable CORS for specific origin
 app.use(cors({
