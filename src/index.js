@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ limit: '1mb', extended: true }));
 app.get("/", (req, res) => {
   let data = {};
   data["GET"] = req.query;
-  res.send(process.env);
+  res.send(process.env.interact_with_vercel_token);
 });
 
 // POST route
