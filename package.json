@@ -4,8 +4,7 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-      "start": "vercel dev",
-    "run":"vercel env pull .env.development.local"
+      "start": "vercel dev"
   },
   "keywords": [],
   "author": "",
