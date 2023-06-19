@@ -1,6 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
+import { kv } from '@vercel/kv';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
