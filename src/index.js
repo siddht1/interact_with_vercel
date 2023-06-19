@@ -22,7 +22,6 @@ app.use(bodyParser.urlencoded({ limit: '1mb', extended: true }));
 async function initializeEdgeConfig() {
   const client = createClient(vercel_token);
   const config = await client.fetch();
-  return config;
   // Do something with the config, e.g. modify headers or rewrite URLs
 }
 let data=initializeEdgeConfig();
@@ -30,7 +29,7 @@ let data=initializeEdgeConfig();
 app.get("/", (req, res) => {
   let data = {};
   data["GET"] = req.query;
-  res.send(config);
+  res.send('checking');
 });
 
 // POST route
