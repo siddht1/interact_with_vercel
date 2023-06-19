@@ -1,8 +1,7 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const cors = require("cors");
-// const edge_config = require('@vercel/edge-config');
-
+import express from "express";
+import bodyParser from "body-parser";
+import cors from "cors";
+// import { get } from '@vercel/edge-config';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
