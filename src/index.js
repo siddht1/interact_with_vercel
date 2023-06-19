@@ -1,36 +1,32 @@
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
-// import { get,has, getAll } from '@vercel/edge-config';
+import { createClient } from '@vercel/edge-config';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-// import { createClient } from '@vercel/edge-config';
-// const edgeConfig = createClient(process.env.ANOTHER_EDGE_CONFIG);
-// await edgeConfig.get('someKey');
 
-
-//check wheter kv is present in env variable or not
-// const kv_url=process.env.KV_URL;
-// const kv_token=process.env.KV_REST_API_TOKEN;
-
+// Create a client object for Edge Config
+const edgeConfig = createClient(process.env.ANOTHER_EDGE_CONFIG);
 
 // Enable CORS for specific origin
 app.use(cors({
-//   origin: "https://example.com"
+  //   origin: "https://example.com"
 }));
 
 // Parse request body and extended the size to 1mb
-
 app.use(bodyParser.json({ limit: '1mb' }));
 app.use(bodyParser.urlencoded({ limit: '1mb', extended: true }));
 
 // GET route
-app.get("/", (req, res) => {
+app.get("/", async (req, res) => {
+  // Get a configuration value from Edge Config
+  const value = await edgeConfig.get('myConfigKey');
+
   let data = {};
   data["GET"] = req.query;
+  data["configValue"] = value;
   res.send(data);
-  // res.send(process.env);
 });
 
 // POST route
