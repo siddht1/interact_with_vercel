@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ limit: '1mb', extended: true }));
 
 // GET route
 app.get("/", (req, res) => {
-    const greeting = await get('greeting');
+    // const greeting = await get('greeting');
  
   let data = {};
   data["GET"] = req.query;
