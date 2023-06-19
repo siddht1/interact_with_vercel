@@ -6,9 +6,8 @@ import { kv } from '@vercel/kv';
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-await kv.set('key', 'value');
-let data = await kv.get('key');
-console.log(data); // 'value'
+//check wheter kv is present in env variable or not
+console.log(process.env);
 
 // Enable CORS for specific origin
 app.use(cors({
