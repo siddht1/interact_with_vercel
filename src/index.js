@@ -7,7 +7,8 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 //check wheter kv is present in env variable or not
-console.log(process.env);
+KV_URL=process.env.KV_URL;
+KV_REST_API_TOKEN=process.env.KV_URL;
 
 // Enable CORS for specific origin
 app.use(cors({
@@ -23,8 +24,8 @@ app.use(bodyParser.urlencoded({ limit: '1mb', extended: true }));
 app.get("/", (req, res) => {
   let data = {};
   data["GET"] = req.query;
-  // res.send(data);
-  res.send(process.env);
+  res.send(data);
+  // res.send(process.env);
 });
 
 // POST route
