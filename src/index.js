@@ -5,6 +5,9 @@ import cors from "cors";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+import { createClient } from '@vercel/edge-config';
+const edgeConfig = createClient(process.env.ANOTHER_EDGE_CONFIG);
+await edgeConfig.get('someKey');
 
 //check wheter kv is present in env variable or not
 // const kv_url=process.env.KV_URL;
