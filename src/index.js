@@ -1,6 +1,9 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+import { createClient } from '@vercel/edge-config';
+
+const vercel_token=process.env.interact_with_vercel_token;
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -19,7 +22,7 @@ app.use(bodyParser.urlencoded({ limit: '1mb', extended: true }));
 app.get("/", (req, res) => {
   let data = {};
   data["GET"] = req.query;
-  res.send(process.env.interact_with_vercel_token);
+  res.send(vercel_token);
 });
 
 // POST route
