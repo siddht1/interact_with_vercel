@@ -17,8 +17,12 @@ app.use(cors({
 app.use(bodyParser.json({ limit: '1mb' }));
 app.use(bodyParser.urlencoded({ limit: '1mb', extended: true }));
 
+export const config = { matcher: '/welcome' };
+
 // GET route
 app.get("/", (req, res) => {
+    const greeting = await get('greeting');
+ 
   let data = {};
   data["GET"] = req.query;
   // res.send(data);
