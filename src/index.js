@@ -7,8 +7,8 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 //check wheter kv is present in env variable or not
-KV_URL=process.env.KV_URL;
-KV_REST_API_TOKEN=process.env.KV_REST_API_TOKEN;
+const kv_url=process.env.KV_URL;
+const kv_token=process.env.KV_REST_API_TOKEN;
 
 // Enable CORS for specific origin
 app.use(cors({
