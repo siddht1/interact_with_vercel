@@ -22,6 +22,7 @@ app.use(bodyParser.urlencoded({ limit: '1mb', extended: true }));
 async function initializeEdgeConfig() {
   const client = createClient(vercel_token);
   const config = await client.fetch();
+  return config;
   // Do something with the config, e.g. modify headers or rewrite URLs
 }
 
@@ -37,7 +38,7 @@ app.post("/", (req, res) => {
   console.log("POST request received");
   let data={};
    data['POST'] = req.body;
-  res.send(config);
+  res.send(initializeEdgeConfig());
 });
 
 // Start the server and initialize Vercel Edge config
