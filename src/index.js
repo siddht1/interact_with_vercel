@@ -29,7 +29,7 @@ async function initializeEdgeConfig() {
 app.get("/", (req, res) => {
   let data = {};
   data["GET"] = req.query;
-  res.send(vercel_token);
+  res.send(config);
 });
 
 // POST route
