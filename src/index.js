@@ -37,7 +37,7 @@ app.post("/", (req, res) => {
   console.log("POST request received");
   let data={};
    data['POST'] = req.body;
-  res.send(data);
+  res.send(config);
 });
 
 // Start the server and initialize Vercel Edge config
