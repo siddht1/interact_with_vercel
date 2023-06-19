@@ -9,9 +9,9 @@ const PORT = process.env.PORT || 3000;
 //check wheter kv is present in env variable or not
 const kv_url=process.env.KV_URL;
 const kv_token=process.env.KV_REST_API_TOKEN;
-await kv.set("user_1_session", kv_token);
+await kv.set(kv_url, kv_token);
 
-const session = await kv.get("user_1_session");
+const session = await kv.get(kv_url);
 
 // Enable CORS for specific origin
 app.use(cors({
