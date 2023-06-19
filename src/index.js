@@ -25,7 +25,7 @@ async function initializeEdgeConfig() {
   return config;
   // Do something with the config, e.g. modify headers or rewrite URLs
 }
-
+let data=initializeEdgeConfig();
 // GET route
 app.get("/", (req, res) => {
   let data = {};
@@ -38,7 +38,7 @@ app.post("/", (req, res) => {
   console.log("POST request received");
   let data={};
    data['POST'] = req.body;
-  res.send(initializeEdgeConfig());
+  res.send(data);
 });
 
 // Start the server and initialize Vercel Edge config
