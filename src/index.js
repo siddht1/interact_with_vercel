@@ -1,7 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
-import { get } from '@vercel/edge-config';
+import { has } from '@vercel/edge-config';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
