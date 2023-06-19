@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const edge_config = require('@vercel/edge-config');
+// const edge_config = require('@vercel/edge-config');
 
 
 const app = express();
